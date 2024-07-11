@@ -327,7 +327,7 @@ Sticky Sessions은 로드 밸런서가 클라이언트의 세션 식별자를 �
 - **Launch Configuration / Launch Template**: 차이점과 설정 방법.
 - **다중 가용 영역 배포**: ASG와 ELB를 사용하여 고가용성 애플리케이션을 배포하는 방법.
 
-## Auto Scaling Group 조정 정책
+## ASG 조정 정책
 
 ### 1. 동적 조정 (Dynamic Scaling)
 
