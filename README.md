@@ -537,4 +537,3 @@ AWS Certified Solutions Architect - Associate (SAA-C03) 시험을 준비하면�
 - **AWS Config**: 리소스 설정을 추적하고 규정 준수 여부를 평가
 - **CloudTrail**: API 활동을 로깅하여 보안 분석 및 규정 준수
 
-이러한 내용을 바탕으로 SAA-C03 시험 준비에 필요한 S3와 보안의 주요 내용을 이해하고 정리할 수 있습니다. 추가적인 심화 학습이 필요하면 AWS 공식 문서와 강의를 참고하세요.
