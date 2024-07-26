@@ -473,13 +473,13 @@ AWS Certified Solutions Architect - Associate (SAA-C03) 시험을 준비하면�
 
 ## Amazon S3 (Simple Storage Service)
 
-#### 기본 개념
+### 기본 개념
 - **객체 스토리지**: 파일을 객체로 저장하는 스토리지 서비스
 - **버킷**: 객체를 저장하는 컨테이너. 버킷 이름은 전 세계에서 유일해야 함
 - **객체**: 파일과 메타데이터의 조합. 객체에는 키(파일명), 데이터, 메타데이터가 포함됨
 - **S3 URI**: s3://bucket-name/key
 
-#### 스토리지 클래스
+### 스토리지 클래스
 - **S3 Standard**: 자주 액세스되는 데이터를 위한 높은 내구성과 가용성을 제공
 - **S3 Intelligent-Tiering**: 데이터 액세스 패턴에 따라 자동으로 비용을 최적화
 - **S3 Standard-IA**: 적게 액세스되는 데이터를 위한 비용 효율적인 스토리지
@@ -487,14 +487,14 @@ AWS Certified Solutions Architect - Associate (SAA-C03) 시험을 준비하면�
 - **S3 Glacier**: 아카이빙을 위한 저비용 스토리지
 - **S3 Glacier Deep Archive**: 장기 보관용 아카이브 스토리지, 가장 저렴한 옵션
 
-#### 버킷 설정 및 관리
+### 버킷 설정 및 관리
 - **버킷 정책**: 버킷 수준에서 액세스를 제어하는 JSON 기반의 정책
 - **ACL(Access Control List)**: 객체 수준에서 액세스를 제어
 - **버전 관리**: 객체의 이전 버전을 보관하여 데이터 보호
 - **수명 주기 정책**: 객체의 수명 주기를 자동으로 관리하여 비용 최적화
 - **S3 이벤트 알림**: 특정 이벤트(예: 객체 생성, 삭제) 발생 시 알림을 설정
 
-#### 보안
+### 보안
 - **IAM(Identity and Access Management)**: 사용자와 리소스에 대한 액세스 제어
 - **S3 버킷 정책**: 버킷과 그 안의 객체에 대한 액세스를 제어
 - **S3 암호화**: 데이터를 보호하기 위해 전송 중(TLS/SSL) 및 저장 중(SSE-S3, SSE-KMS, SSE-C) 암호화
@@ -506,7 +506,7 @@ AWS Certified Solutions Architect - Associate (SAA-C03) 시험을 준비하면�
 - **MFA Delete**: 다단계 인증을 통한 삭제 방지
 - **S3 Block Public Access**: 퍼블릭 액세스를 차단하는 설정
 
-#### 성능 및 최적화
+### 성능 및 최적화
 - **멀티파트 업로드**: 큰 파일을 여러 파트로 나누어 병렬로 업로드
 - **Transfer Acceleration**: 전 세계적으로 빠른 업로드를 위한 CloudFront 엣지 로케이션 사용
 - **Cross-Region Replication (CRR)**: 객체를 다른 리전으로 복제하여 데이터 내구성 및 접근성 향상
@@ -514,26 +514,97 @@ AWS Certified Solutions Architect - Associate (SAA-C03) 시험을 준비하면�
 
 ### 보안
 
-#### IAM(Identity and Access Management)
+### IAM(Identity and Access Management)
 - **사용자와 그룹**: IAM 사용자와 그룹을 통해 AWS 리소스에 대한 액세스를 제어
 - **역할(Role)**: 다른 AWS 서비스나 사용자가 특정 권한을 가지도록 역할을 부여
 - **정책(Policy)**: JSON 문서로 액세스 권한을 정의
 
-#### 네트워크 보안
+### 네트워크 보안
 - **VPC (Virtual Private Cloud)**: 가상 네트워크를 통해 AWS 리소스를 보호
 - **보안 그룹**: 인스턴스 수준에서 인바운드/아웃바운드 트래픽 제어
 - **네트워크 ACL**: 서브넷 수준에서 트래픽 제어
 - **VPN 및 Direct Connect**: 온프레미스 네트워크와 AWS 간의 안전한 연결
 
-#### 데이터 보호
+### 데이터 보호
 - **암호화**: 데이터의 기밀성을 보장
   - **KMS**: 키를 생성하고 관리
   - **Certificate Manager**: SSL/TLS 인증서를 관리
 - **백업 및 복구**: 데이터 손실을 방지하기 위한 백업 전략
 - **CloudTrail**: API 호출을 로깅하여 모니터링 및 감사
 
-#### 모니터링 및 로깅
+### 모니터링 및 로깅
 - **CloudWatch**: 로그, 메트릭, 이벤트를 모니터링하여 리소스의 상태를 추적
 - **AWS Config**: 리소스 설정을 추적하고 규정 준수 여부를 평가
 - **CloudTrail**: API 활동을 로깅하여 보안 분석 및 규정 준수
+
+AWS FSx는 AWS에서 제공하는 완전 관리형 파일 시스템 서비스입니다. 다양한 워크로드와 성능 요구 사항을 충족하기 위해 여러 파일 시스템 옵션을 제공합니다. AWS FSx의 주요 종류와 그 차이점을 알아보겠습니다.
+
+## AWS FSx 종류 및 차이점
+
+### 1. Amazon FSx for Windows File Server
+- **특징**:
+  - Windows 기반 파일 워크로드를 위한 완전 관리형 네이티브 Microsoft Windows 파일 시스템
+  - 완전한 SMB (Server Message Block) 프로토콜 지원
+  - Windows ACL (Access Control Lists) 지원
+  - Active Directory (AD) 통합 가능
+  - 데이터 중복 제거, 압축 및 스냅샷 기능 제공
+  - 고가용성을 위해 다중 가용 영역(AZ) 배포 가능
+- **사용 사례**:
+  - Windows 기반 애플리케이션 (예: .NET, SQL Server)
+  - 홈 디렉토리, 문서 관리 및 미디어 저장소
+
+### 2. Amazon FSx for Lustre
+- **특징**:
+  - 고성능 컴퓨팅(HPC) 워크로드를 위한 병렬 파일 시스템
+  - 낮은 지연 시간과 높은 처리량 제공
+  - POSIX 인터페이스 지원
+  - Amazon S3와 통합하여 S3 버킷을 파일 시스템으로 마운트 가능
+  - 짧은 지연 시간의 체크포인트 및 재시작 지원
+- **사용 사례**:
+  - 기계 학습, 빅 데이터 분석
+  - 미디어 처리 및 금융 모델링
+  - 전산 유체 역학 및 유전체학 연구
+
+### 3. Amazon FSx for NetApp ONTAP
+- **특징**:
+  - NetApp의 ONTAP 데이터 관리 소프트웨어를 기반으로 하는 완전 관리형 파일 시스템
+  - NFS, SMB, iSCSI 프로토콜 지원
+  - 데이터 중복 제거, 압축 및 계층화 지원
+  - 스냅샷 및 복제 기능 제공
+  - 멀티 AZ 배포를 통한 고가용성
+- **사용 사례**:
+  - 엔터프라이즈 파일 워크로드
+  - 데이터 센터에서 클라우드로의 마이그레이션
+  - DevOps 환경에서의 파일 공유
+
+### 4. Amazon FSx for OpenZFS
+- **특징**:
+  - OpenZFS 파일 시스템을 기반으로 한 완전 관리형 파일 스토리지
+  - 스냅샷, 복제 및 클론 기능 제공
+  - 데이터 중복 제거 및 압축 지원
+  - POSIX 인터페이스 지원
+  - 높은 IOPS 및 낮은 지연 시간 제공
+- **사용 사례**:
+  - Dev/Test 워크로드
+  - 데이터 분석 및 백업
+  - 파일 기반 워크로드
+
+### 주요 차이점 요약
+1. **지원 운영 체제 및 프로토콜**:
+   - **Windows File Server**: Windows, SMB
+   - **Lustre**: Linux, POSIX
+   - **NetApp ONTAP**: Windows, Linux, NFS, SMB, iSCSI
+   - **OpenZFS**: Linux, POSIX
+
+2. **주요 사용 사례**:
+   - **Windows File Server**: Windows 기반 애플리케이션 및 파일 공유
+   - **Lustre**: 고성능 컴퓨팅 및 빅 데이터 분석
+   - **NetApp ONTAP**: 엔터프라이즈 파일 워크로드 및 하이브리드 클라우드
+   - **OpenZFS**: Dev/Test, 데이터 분석 및 파일 기반 워크로드
+
+3. **성능 특성**:
+   - **Windows File Server**: 고가용성, Active Directory 통합
+   - **Lustre**: 높은 처리량, 낮은 지연 시간
+   - **NetApp ONTAP**: 데이터 관리 기능, 고가용성
+   - **OpenZFS**: 데이터 중복 제거, 압축, 높은 IOPS
 
